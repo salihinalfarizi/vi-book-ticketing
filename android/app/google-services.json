@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "431656433831",
+    "project_id": "vi-book-ticketing",
+    "storage_bucket": "vi-book-ticketing.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:431656433831:android:982142fd7d84d3d6870382",
+        "android_client_info": {
+          "package_name": "com.salihinalfarizi.vi_book"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZi6AnNaBcHDXnsBZWsW8mZKo0zlke2Os"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

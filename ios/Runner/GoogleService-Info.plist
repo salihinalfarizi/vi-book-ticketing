@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyBhQQ6MCxUCv9k5f7Kzy3EANZwISJf7-Qo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>431656433831</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.viBook</string>
+	<key>PROJECT_ID</key>
+	<string>vi-book-ticketing</string>
+	<key>STORAGE_BUCKET</key>
+	<string>vi-book-ticketing.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:431656433831:ios:3bffcc50b6438631870382</string>
+</dict>
+</plist>
