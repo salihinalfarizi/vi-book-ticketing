@@ -1,7 +1,11 @@
 import 'package:vi_book/data/repositories/authentication.dart';
 import 'package:vi_book/domain/entities/result.dart';
+import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 
-class DummyAuthentication implements Authentication {
+class FirebaseAuthentication implements Authentication {
+  final firebase_auth.FirebaseAuth _firebaseAuth;
+
+  FirebaseAuthentication({firebase_auth.FirebaseAuth? firebaseAuth}) : _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance;
   @override
   String? getLoggedInUserId() {
     // TODO: implement getLoggedInUserId
@@ -10,9 +14,13 @@ class DummyAuthentication implements Authentication {
 
   @override
   Future<Result<String>> login({required String email, required String password}) async {
-    await Future.delayed(const Duration(seconds: 1));
-    // return const Result.success('ID-12345');
-    return const Result.failed('Gagal Login');
+    try {
+      var userCredential = await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
+      return Result.success(userCredential.user!.uid);
+
+    } on firebase_auth.FirebaseAuthException catch (e) {
+      return Result.failed(e.message!);
+    }
   }
 
   @override
