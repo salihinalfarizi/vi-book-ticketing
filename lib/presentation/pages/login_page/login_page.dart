@@ -20,7 +20,7 @@ class LoginPage extends StatelessWidget {
                   authentication: FirebaseAuthentication(),
                   userRepository: FirebaseUserRepository());
 
-              login(LoginParams(email: 'test@demo.com', password: '123456'))
+              login(LoginParams(email: 'test123@gmail.com', password: '123456'))
                   .then((result) {
                 if (result.isSuccess) {
                   Navigator.of(context).push(MaterialPageRoute(

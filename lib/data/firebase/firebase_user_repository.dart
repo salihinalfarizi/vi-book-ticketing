@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:vi_book/data/repositories/user_repository.dart';
 import 'package:vi_book/domain/entities/result.dart';
@@ -5,6 +6,7 @@ import 'package:vi_book/domain/entities/user.dart';
 
 class FirebaseUserRepository implements UserRepository {
   final FirebaseFirestore _firebaseFirestore;
+
   FirebaseUserRepository({FirebaseFirestore? firebaseFirestore})
       : _firebaseFirestore = firebaseFirestore ?? FirebaseFirestore.instance;
 
@@ -21,13 +23,16 @@ class FirebaseUserRepository implements UserRepository {
 
   @override
   Future<Result<User>> getUser({required String uid}) async {
-    DocumentReference<Map<String, dynamic>> documentReference = _firebaseFirestore.doc('user/$uid');
-    DocumentSnapshot<Map<String, dynamic>> result = await documentReference.get();
+    DocumentReference<Map<String, dynamic>> documentReference =
+        _firebaseFirestore.doc('users/$uid');
 
-    if(result.exists){
+    DocumentSnapshot<Map<String, dynamic>> result =
+        await documentReference.get();
+
+    if (result.exists) {
       return Result.success(User.fromJson(result.data()!));
     } else {
-      return const Result.failed('User not found!');
+      return const Result.failed('User not found');
     }
   }
 
@@ -52,7 +57,7 @@ class FirebaseUserRepository implements UserRepository {
 
   @override
   Future<Result<User>> uploadProfilePicture(
-      {required User user, required imageFile}) {
+      {required User user, required File imageFile}) {
     // TODO: implement uploadProfilePicture
     throw UnimplementedError();
   }
